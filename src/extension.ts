@@ -81,7 +81,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       console.log('saved:', td.getText());
       try {
-        const updated = td.getText().replace(/\n/g, '\\n');
+        const updated = td.getText().replace(\, '\\n');
         console.log('updated:', updated);
 
         const {range} = editContext;
@@ -121,9 +121,9 @@ export function activate(context: vscode.ExtensionContext) {
 
       let content;
       try {
-        content = target.body.replace(/\\n/g, '\n');
+        content = target.body.replace(/\\n/g, '');
       } catch (e) {
-        content = target.body.replace(/\\"/g, '"');
+        content = target.body.replace(/\\"/g, '');
       }
       memFs.writeFile(uri, Buffer.from(content), {
         create: true,
