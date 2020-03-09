@@ -31,7 +31,7 @@ function getTarget(editor: vscode.TextEditor): EditTarget | null {
     .join('');
 
   if (positionEquals(selection.start, selection.end)) {
-    const regex = /"(.*?)"(?!\\)/g;
+    const regex = /'(.*?)'(?!\\)/g;
 
     let a;
     while ((a = regex.exec(reversedLine)) != null) {
